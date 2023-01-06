@@ -1,0 +1,42 @@
+ALGORITHM array-solution
+VAR
+    tab1 : ARRAY_OF integer[n];
+    tab2 : ARRAY_OF integer[n];
+    i,j,sum:integer;
+    found:BOOLEAN
+BEGIN
+sum:=0;
+//saisir deux tableau
+FOR i FROM 0 TO tab1.length-1  DO
+    read(tab1[i]);
+END_FOR
+FOR i FROM 0 TO tab1.length-1  DO
+    read(tab2[i]);
+END_FOR
+
+FOR i FROM 0 TO tab1.length-1  DO
+found:=flase;
+   FOR j FROM 0 TO tab2.length-1  DO 
+   IF (tab1[i]=tab2[i]) THEN
+    found:=true;
+   END_IF
+   END_FOR
+   IF (found=false) THEN
+    sum:=sum+tab1[i];
+   END_IF
+END_FOR
+FOR i FROM 0 TO tab2.length-1  DO
+found:=true;
+   FOR j FROM 0 TO tab1.length-1  DO 
+   IF (tab2[i]=tab1[j]) THEN
+    found:=true;
+   END_IF
+   END_FOR
+   IF (found=false) THEN
+    sum:=sum+tab2[i];
+   END_IF
+END_FOR
+write("la somme est,"sum);
+
+
+END
