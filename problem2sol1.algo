@@ -19,10 +19,18 @@ found:=flase;
    FOR j FROM 0 TO tab2.length-1  DO 
    IF (tab1[i]=tab2[i]) THEN
     found:=true;
-    sum-over:=tab1[i]+tab2[i];
-   END_IF
+    sum-over:=sum-over+tab1[i];
 END_FOR
 END_FOR
+FOR i FROM 0 TO tab2.length-1  DO
+found:=flase;
+   FOR j FROM 0 TO tab1.length-1  DO 
+   IF (tab1[i]=tab2[i]) THEN
+    found:=true;
+    sum-over:=sum-over+tab2[i];
+END_FOR
+END_FOR
+
 write("la somme  des élément qui se répètent est,"sum);
  write("les éléments qui se repètent de tableau T est":i,j);
 
